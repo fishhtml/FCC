@@ -9,6 +9,7 @@ function changeColor(color) {
     select("a").style.backgroundColor = color;
     select("#content").style.color = color;
     select("#author").style.color = color;
+    select("#content img").style.backgroundColor = color;
 }
 function changeContext(context) {
     document.querySelector("#content span").textContent = context;

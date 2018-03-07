@@ -2,9 +2,9 @@
     box-sizing: border-box;
     font-family: sans;
     font-size: 16px;
-    -webkit-transition: background-color 1s, color 1s;
-    -moz-transition: background-color 1s, color 1s;
-    transition: background-color 1s, color 1s;
+    -webkit-transition: background-color 1s, color 0.5s;
+    -moz-transition: background-color 1s, color 0.5s;
+    transition: background-color 1s, color 0.5s;
 }
 a {
     text-decoration: none;
@@ -18,20 +18,25 @@ html {
 section {
     background-color: #fff;
     width: 550px;
-/*     height: 200px; */
+    height: auto;
     margin: 150px auto;
     border-radius: 5px;
     padding: 40px 30px;
+    transition: height 1s;
 }
-button{
+
+button {
     border-style: none;
     background-color: #e74c3c;
     border-radius: 3px;
     color: #fff;
 }
-.fa-quote-left {
+#quote {
     margin-right: 8px;
-    
+    display: inline-block;
+    width: 36px;
+    height: 36px;
+    background: url("./src/quote.svg") no-repeat center center;
 }
 #content {
     font-size: 30px;
@@ -41,6 +46,12 @@ button{
 }
 #content span {
     font-size: 30px;
+}
+#content img {
+    float: left;
+    background-color: #e74c3c;
+    width: 36px;
+    height: 36px;;
 }
 #author {
     text-align: right;
@@ -56,8 +67,6 @@ button{
     overflow: hidden;
     line-height: 32px;
     padding-top: 10px;
-    /*! padding-bottom: 10px; */
-    
 }
 #share-place a {
     float: left;
@@ -78,4 +87,19 @@ button{
     font-size: 16px;
     line-height: 20px;
     padding: 6px 8px;
+}
+@media screen and (max-width: 600px) {
+    section {
+        width: 98%;
+    }
+    #content {
+        font-size: 24px;
+    }
+    #content span {
+        font-size: 24px;
+    }
+    #content img {
+        width: 32px;
+        height: 32px;
+    }
 }
