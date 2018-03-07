@@ -3,4 +3,4 @@
 
 ## A Random Quote Machine
 
-[点我预览](http: )
+[点我预览](A Random Quote Machine/app.html)
