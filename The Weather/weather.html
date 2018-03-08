@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./weather.css">
+    <title>Document</title>
+</head>
+<body>
+    <section id="today-section">
+        <h1>天气预报</h1>
+        <section id="today-pannel">
+            <div id="today-weather-info">
+                <h2><span id="today-week">星期四</span><span id="now-time">10:44</span>更新</h2>
+                <p id="today-weather-main">
+                    <img src="" alt="天气图标">
+                    <span id="today-weather-words">多云转晴</span>
+                    <span id="today-weather-temp">9℃~21℃（当前：<span id="now-temp">10℃</span>)</span>
+                    
+                </p>
+                <p id="today-weather-other">
+                    <span id="today-weather-wind">北风４～５级</span>
+                    <span id="today-weather-dry">湿度70%</span>
+                    <button id="today-index">生活指数</button>
+                </p>
+            </div>
+            <ul id="today-weather-index">
+                <li>穿衣指数<span>较冷</span></li>
+                <li>紫外线强度<span>中等</span></li>
+                <li>洗车指数<span>较适宜</span></li>
+                <li>旅游指数<span>适宜</span></li>
+                <li>晨练指数<span>较适宜</span></li>
+                <li>建议<span id="today-suggestion">建议着大衣、呢外套加毛衣、卫衣等服装。</span></li>
+            </ul>
+        </section>
+    </section>
+    <section id="future-section">
+        <h1>未来七天</h1>
+        <section id="future-pannel">  
+            <section class="future-someday">
+                <h3>
+                    <span class="future-date">0302</span><span class="future-week">星期四</span>
+                </h3>
+                <img src="" alt="天气图标">
+                <ul>
+                    <li>天气<span class="future-weather">多云转晴</span></li>
+                    <li>温度<span class="future-temp">8℃~19℃</span></li>
+                </ul>
+            </section>
+            <section class="future-someday">
+                <h3>
+                    <span>0302</span><span>星期四</span>
+                </h3>
+                <img src="" alt="天气图标">
+                <ul>
+                    <li>天气<span>多云转晴</span></li>
+                    <li>温度<span>8℃~19℃</span></li>
+                </ul>
+            </section>
+        </section>
+    </section>
+    <!-- <script src="./weather.js"></script> -->
+</body>
+</html>
