@@ -145,13 +145,13 @@ function getWeatherDate(option_) {
 //获取本机ip地址
 //获取本机gps地址
 function getIp(response) {
-    alert(response.ip);
+    // alert(response.ip);
     getWeatherDate({
         ip: response.ip
     });
     //注意，jsonp是异步加载，不支持同步调用，所以下一次jsonp必须在回调里面指定。
 }
-addJSONP("http://freegeoip.net/json/?callback=getIp");
+// addJSONP("http://freegeoip.net/json/?callback=getIp");
 // filterWeatherJson({
 //     "resultcode": "200",
 //     "reason": "successed!",
@@ -262,3 +262,22 @@ addJSONP("http://freegeoip.net/json/?callback=getIp");
 
 //所有接受回调函数的方法，想要同步执行，必须在回调的函数里面指定；
 //本例中有地理位置的获取和jsonp都是这样的情况
+
+//动画效果
+function hideAndShow(hideSelector, eventSelector, event) {
+    var hideEle = document.querySelector(hideSelector);
+    var eventEle = document.querySelector(eventSelector);
+    var isHidden = true;
+    eventEle.addEventListener(event, function(e) {
+        if(isHidden) {
+            // hideEle.style.visibility = "visible";
+            hideEle.style.opacity = 1;
+            isHidden = false;
+        }else{
+            // hideEle.style.visibility = "hidden";
+            hideEle.style.opacity = 0;
+            isHidden = true;
+        }
+    })
+}
+hideAndShow("#today-weather-index", "#today-index", "click")

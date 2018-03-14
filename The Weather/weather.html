@@ -10,11 +10,11 @@
 <body>
     <section id="today-section">
         <h1>天气预报</h1>
-        <section id="today-pannel">
+        <section id="today-pannel" class="pannel-common">
             <div id="today-weather-info">
                 <h2><span id="today-week">星期四</span><span id="now-time">10:44</span>更新</h2>
                 <p id="today-weather-main">
-                    <img src="" alt="天气图标">
+                    <img src="./src/cloudy.png" alt="天气图标">
                     <span id="today-weather-words">多云转晴</span>
                     <span id="today-weather-temp">9℃~21℃（当前：<span id="now-temp">10℃</span>)</span>
                     
@@ -25,27 +25,29 @@
                     <button id="today-index">生活指数</button>
                 </p>
             </div>
-            <ul id="today-weather-index">
-                <li>穿衣指数<span>较冷</span></li>
-                <li>紫外线强度<span>中等</span></li>
-                <li>洗车指数<span>较适宜</span></li>
-                <li>旅游指数<span>适宜</span></li>
-                <li>晨练指数<span>较适宜</span></li>
-                <li>建议<span id="today-suggestion">建议着大衣、呢外套加毛衣、卫衣等服装。</span></li>
-            </ul>
+            <div id="today-weather-index">
+                <ul id="today-weather-index-inner">
+                    <li>穿衣指数&nbsp;&nbsp;<span>较冷</span></li>
+                    <li>紫外线强度&nbsp;&nbsp;&nbsp;&nbsp;<span>中等</span></li>
+                    <li>洗车指数&nbsp;&nbsp;&nbsp;&nbsp;<span>较适宜</span></li>
+                    <li>旅游指数&nbsp;&nbsp;&nbsp;&nbsp;<span>适宜</span></li>
+                    <li>晨练指数&nbsp;&nbsp;&nbsp;&nbsp;<span>较适宜</span></li>
+                    <li><span id="today-suggestion">建议着大衣、呢外套加毛衣、卫衣等呢外套加毛衣呢外套加衣等呢外套加毛衣呢外套加毛衣呢外套加毛衣毛衣呢外套加毛衣。</span></li>
+                </ul>
+            </div>
         </section>
     </section>
     <section id="future-section">
         <h1>未来七天</h1>
-        <section id="future-pannel">  
+        <section id="future-pannel" class="pannel-common">  
             <section class="future-someday">
                 <h3>
                     <span class="future-date">0302</span><span class="future-week">星期四</span>
                 </h3>
-                <img src="" alt="天气图标">
+                <img src="./src/sunny.png" alt="图标">
                 <ul>
-                    <li>天气<span class="future-weather">多云转晴</span></li>
-                    <li>温度<span class="future-temp">8℃~19℃</span></li>
+                    <li><span class="future-weather">多云转晴</span></li>
+                    <li><span class="future-temp">8℃~19℃</span></li>
                 </ul>
             </section>
             <section class="future-someday">
@@ -53,12 +55,12 @@
                     <span class="future-date">0302</span>
                     <span class="future-week">星期四</span>
                 </h3>
-                <img src="" alt="天气图标">
+                <img src="./src/sunny.png" alt="图标">
                 <ul>
-                    <li>天气
+                    <li>
                         <span class="future-weather">多云转晴</span>
                     </li>
-                    <li>温度
+                    <li>
                         <span class="future-temp">8℃~19℃</span>
                     </li>
                 </ul>
@@ -68,12 +70,12 @@
                     <span class="future-date">0302</span>
                     <span class="future-week">星期四</span>
                 </h3>
-                <img src="" alt="天气图标">
+                <img src="./src/sunny.png" alt="图标">
                 <ul>
-                    <li>天气
+                    <li>
                         <span class="future-weather">多云转晴</span>
                     </li>
-                    <li>温度
+                    <li>
                         <span class="future-temp">8℃~19℃</span>
                     </li>
                 </ul>
@@ -83,12 +85,12 @@
                     <span class="future-date">0302</span>
                     <span class="future-week">星期四</span>
                 </h3>
-                <img src="" alt="天气图标">
+                <img src="./src/sunny.png" alt="图标">
                 <ul>
-                    <li>天气
+                    <li>
                         <span class="future-weather">多云转晴</span>
                     </li>
-                    <li>温度
+                    <li>
                         <span class="future-temp">8℃~19℃</span>
                     </li>
                 </ul>
@@ -98,12 +100,12 @@
                     <span class="future-date">0302</span>
                     <span class="future-week">星期四</span>
                 </h3>
-                <img src="" alt="天气图标">
+                <img src="./src/sunny.png" alt="图标">
                 <ul>
-                    <li>天气
+                    <li>
                         <span class="future-weather">多云转晴</span>
                     </li>
-                    <li>温度
+                    <li>
                         <span class="future-temp">8℃~19℃</span>
                     </li>
                 </ul>
@@ -113,12 +115,12 @@
                     <span class="future-date">0302</span>
                     <span class="future-week">星期四</span>
                 </h3>
-                <img src="" alt="天气图标">
+                <img src="./src/sunny.png" alt="图标">
                 <ul>
-                    <li>天气
+                    <li>
                         <span class="future-weather">多云转晴</span>
                     </li>
-                    <li>温度
+                    <li>
                         <span class="future-temp">8℃~19℃</span>
                     </li>
                 </ul>
@@ -128,12 +130,12 @@
                     <span class="future-date">0302</span>
                     <span class="future-week">星期四</span>
                 </h3>
-                <img src="" alt="天气图标">
+                <img src="./src/sunny.png" alt="图标">
                 <ul>
-                    <li>天气
+                    <li>
                         <span class="future-weather">多云转晴</span>
                     </li>
-                    <li>温度
+                    <li>
                         <span class="future-temp">8℃~19℃</span>
                     </li>
                 </ul>

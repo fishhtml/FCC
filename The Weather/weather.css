@@ -3,25 +3,137 @@
     font-family: "微软雅黑", sans-serif;
     font-size: 15px;
     line-height: 20px; 
-    color: #578DC9;
+    color: #888;
+}
+html {
+    background: #F6F6F6;
 }
 li {
     list-style: none;
 }
+ul {
+    padding-left: 0;
+    margin: 0;
+}
 button {
     border-style: none;
-    height: 20px;
-    padding-left: 5px;
-    padding-right: 5px;
-    border-radius: 2px;
+    background-color: #FFEEA3;
+    padding: 2px 8px;
+    border-radius: 5px;
+}
+button:hover {
+    opacity: 0.8;
 }
 h1 {
     font-size: 28px;
+    text-align: center;
 }
 h2 {
     font-size: 16px;
 }
-#weather-index {
-/*     visibility: hidden; */
-    
+body {
+    width: 1000px;;
+    margin: 0 auto;
+}
+.pannel-common {
+    overflow: hidden;
+    background-color: #ffffff;
+    border-radius: 5px;
+    padding: 35px 65px;
+}
+#today-pannel {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+#today-weather-info {
+    width: 0.5;
+    /*! order: 1; */
+    flex-basis: 390px;
+    flex-shrink: 0;
+}
+#today-weather-main img{
+    vertical-align: middle;
+}
+#today-weather-words {
+    display: inline-block;
+    font-size: 18px;
+    position: relative;
+    top: 20px;
+    left: 10px;
+}
+#today-weather-temp {
+    display: block;
+    font-size: 27px;
+    margin-top: 10px;
+    color: #6c8eb1;
+    line-height: 29px;
+}
+#today-weather-temp span {
+    color: #6c8eb1;
+    font-size: 27px;
+}
+#today-weather-other span{
+    display: inline-block;
+    margin-right: 20px;
+}
+#today-weather-index {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 0.5;
+    opacity: 0;
+}
+#today-weather-index li:first-of-type {
+    background: url("./src/clothing.png") left center no-repeat;
+}
+#today-weather-index li:nth-of-type(2) {
+    background: url("./src/uv.png") left center no-repeat
+}
+#today-weather-index li:nth-of-type(3) {
+    background: url("./src/carwashing.png") left center no-repeat
+}
+#today-weather-index li:nth-of-type(4) {
+    background: url("./src/travelling.png") left center no-repeat
+}
+#today-weather-index li:nth-of-type(5) {
+    background: url("./src/exercise.png") left center no-repeat
+}
+#today-weather-index li:nth-of-type(6) {
+    background: url("./src/info.png") left center no-repeat
+}
+#today-weather-index li{
+    height: 28px;
+    line-height: 28px;
+    background-size: 15px !important;
+    text-indent: 24px;
+    color: #a3a3a3;
+    align-items: center;
+}
+#today-weather-index span {
+    color: #a3a3a3;
+}
+#today-weather-index {
+    -webkit-transition: height 0.3s;
+    -moz-transition: heigth 0.3s;
+    transition: opacity 0.3s;
+    overflow: hidden;
+    margin: 0;
+    white-space: nowrap;
+    width: 0.5;
+    flex-shrink: 1;
+}
+.future-week {
+    display: block;
+}
+#future-pannel {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.future-someday {
+    text-align: center;
+    order: 1;
 }
