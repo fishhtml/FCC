@@ -166,114 +166,114 @@ function getIp(response) {
     });
     //注意，jsonp是异步加载，不支持同步调用，所以下一次jsonp必须在回调里面指定。
 }
-// addJSONP("http://freegeoip.net/json/?callback=getIp");
-filterWeatherJson({
-    "resultcode": "200",
-    "reason": "successed!",
-    "result": {
-        "sk": {
-            "temp": "4",
-            "wind_direction": "北风",
-            "wind_strength": "1级",
-            "humidity": "70%",
-            "time": "00:52"
-        },
-        "today": {
-            "temperature": "3℃~17℃",
-            "weather": "晴转多云",
-            "weather_id": {
-                "fa": "00",
-                "fb": "01"
-            },
-            "wind": "南风微风",
-            "week": "星期二",
-            "city": "北京",
-            "date_y": "2018年03月13日",
-            "dressing_index": "较舒适",
-            "dressing_advice": "建议着薄外套、开衫牛仔衫裤等服装。年老体弱者应适当添加衣物，宜着夹克衫、薄毛衣等。",
-            "uv_index": "中等",
-            "comfort_index": "",
-            "wash_index": "较适宜",
-            "travel_index": "较不宜",
-            "exercise_index": "较不宜",
-            "drying_index": ""
-        },
-        "future": [
-            {
-                "temperature": "3℃~17℃",
-                "weather": "晴转多云",
-                "weather_id": {
-                    "fa": "00",
-                    "fb": "01"
-                },
-                "wind": "南风微风",
-                "week": "星期二",
-                "date": "20180313"
-            }, {
-                "temperature": "5℃~15℃",
-                "weather": "多云转阴",
-                "weather_id": {
-                    "fa": "01",
-                    "fb": "02"
-                },
-                "wind": "南风微风",
-                "week": "星期三",
-                "date": "20180314"
-            }, {
-                "temperature": "0℃~9℃",
-                "weather": "多云转晴",
-                "weather_id": {
-                    "fa": "01",
-                    "fb": "00"
-                },
-                "wind": "东北风3-5级",
-                "week": "星期四",
-                "date": "20180315"
-            }, {
-                "temperature": "1℃~8℃",
-                "weather": "多云转阴",
-                "weather_id": {
-                    "fa": "01",
-                    "fb": "02"
-                },
-                "wind": "南风微风",
-                "week": "星期五",
-                "date": "20180316"
-            }, {
-                "temperature": "1℃~9℃",
-                "weather": "多云",
-                "weather_id": {
-                    "fa": "01",
-                    "fb": "01"
-                },
-                "wind": "南风微风",
-                "week": "星期六",
-                "date": "20180317"
-            }, {
-                "temperature": "5℃~15℃",
-                "weather": "多云转阴",
-                "weather_id": {
-                    "fa": "01",
-                    "fb": "02"
-                },
-                "wind": "南风微风",
-                "week": "星期日",
-                "date": "20180318"
-            }, {
-                "temperature": "5℃~15℃",
-                "weather": "多云转阴",
-                "weather_id": {
-                    "fa": "01",
-                    "fb": "02"
-                },
-                "wind": "南风微风",
-                "week": "星期一",
-                "date": "20180319"
-            }
-        ]
-    },
-    "error_code": 0
-});
+addJSONP("http://freegeoip.net/json/?callback=getIp");
+// filterWeatherJson({
+//     "resultcode": "200",
+//     "reason": "successed!",
+//     "result": {
+//         "sk": {
+//             "temp": "4",
+//             "wind_direction": "北风",
+//             "wind_strength": "1级",
+//             "humidity": "70%",
+//             "time": "00:52"
+//         },
+//         "today": {
+//             "temperature": "3℃~17℃",
+//             "weather": "晴转多云",
+//             "weather_id": {
+//                 "fa": "00",
+//                 "fb": "01"
+//             },
+//             "wind": "南风微风",
+//             "week": "星期二",
+//             "city": "北京",
+//             "date_y": "2018年03月13日",
+//             "dressing_index": "较舒适",
+//             "dressing_advice": "建议着薄外套、开衫牛仔衫裤等服装。年老体弱者应适当添加衣物，宜着夹克衫、薄毛衣等。",
+//             "uv_index": "中等",
+//             "comfort_index": "",
+//             "wash_index": "较适宜",
+//             "travel_index": "较不宜",
+//             "exercise_index": "较不宜",
+//             "drying_index": ""
+//         },
+//         "future": [
+//             {
+//                 "temperature": "3℃~17℃",
+//                 "weather": "晴转多云",
+//                 "weather_id": {
+//                     "fa": "00",
+//                     "fb": "01"
+//                 },
+//                 "wind": "南风微风",
+//                 "week": "星期二",
+//                 "date": "20180313"
+//             }, {
+//                 "temperature": "5℃~15℃",
+//                 "weather": "多云转阴",
+//                 "weather_id": {
+//                     "fa": "01",
+//                     "fb": "02"
+//                 },
+//                 "wind": "南风微风",
+//                 "week": "星期三",
+//                 "date": "20180314"
+//             }, {
+//                 "temperature": "0℃~9℃",
+//                 "weather": "多云转晴",
+//                 "weather_id": {
+//                     "fa": "01",
+//                     "fb": "00"
+//                 },
+//                 "wind": "东北风3-5级",
+//                 "week": "星期四",
+//                 "date": "20180315"
+//             }, {
+//                 "temperature": "1℃~8℃",
+//                 "weather": "多云转阴",
+//                 "weather_id": {
+//                     "fa": "01",
+//                     "fb": "02"
+//                 },
+//                 "wind": "南风微风",
+//                 "week": "星期五",
+//                 "date": "20180316"
+//             }, {
+//                 "temperature": "1℃~9℃",
+//                 "weather": "多云",
+//                 "weather_id": {
+//                     "fa": "01",
+//                     "fb": "01"
+//                 },
+//                 "wind": "南风微风",
+//                 "week": "星期六",
+//                 "date": "20180317"
+//             }, {
+//                 "temperature": "5℃~15℃",
+//                 "weather": "多云转阴",
+//                 "weather_id": {
+//                     "fa": "01",
+//                     "fb": "02"
+//                 },
+//                 "wind": "南风微风",
+//                 "week": "星期日",
+//                 "date": "20180318"
+//             }, {
+//                 "temperature": "5℃~15℃",
+//                 "weather": "多云转阴",
+//                 "weather_id": {
+//                     "fa": "01",
+//                     "fb": "02"
+//                 },
+//                 "wind": "南风微风",
+//                 "week": "星期一",
+//                 "date": "20180319"
+//             }
+//         ]
+//     },
+//     "error_code": 0
+// });
 
 //所有接受回调函数的方法，想要同步执行，必须在回调的函数里面指定；
 //本例中有地理位置的获取和jsonp都是这样的情况
