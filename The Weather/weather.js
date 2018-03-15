@@ -166,7 +166,7 @@ function getIp(response) {
     });
     //注意，jsonp是异步加载，不支持同步调用，所以下一次jsonp必须在回调里面指定。
 }
-addJSONP("http://freegeoip.net/json/?callback=getIp");
+addJSONP("https://freegeoip.net/json/?callback=getIp");
 // filterWeatherJson({
 //     "resultcode": "200",
 //     "reason": "successed!",
