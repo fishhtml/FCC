@@ -146,7 +146,7 @@ function getWeatherDate(option_) {
     var mode = option.ip ? "ip" : "geo";
     var log = option.gps[0] ? "&log=" + option.gps[0] : "";
     var lat = option.gps[1] ? "&lat=" + option.gps[1] : "";
-    var url = "http://v.juhe.cn/weather/"
+    var url = "https://v.juhe.cn/weather/"
         + mode
         + "?format=" + option.format 
         + log
