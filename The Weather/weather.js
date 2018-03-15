@@ -1,11 +1,17 @@
+function getElement(selector) {
+    return document.querySelector(selector);
+}
+function getAllElement(selector) {
+    return document.querySelectorAll(selector);
+}
 //函数：把数据填入ＤＯＭ中
 function updateWeather([now, today, todayIndex, future]) {
-    var getTextSelection = function (selector) {
-        return document.querySelector(selector);
-    }
-    var getAllTextSelection = function (selector) {
-        return document.querySelectorAll(selector);
-    }
+    // var getElement = function (selector) {
+    //     return document.querySelector(selector);
+    // }
+    // var getAllElement = function (selector) {
+    //     return document.querySelectorAll(selector);
+    // }
     var nowSelector = [
         "#now-time",
         "#now-temp"
@@ -17,18 +23,18 @@ function updateWeather([now, today, todayIndex, future]) {
         "#today-weather-wind",
         "#today-weather-dry ",
     ];
-    var todayIndexSelection = getAllTextSelection("#today-weather-index span");
+    var todayIndexSelection = getAllElement(".today-weather-index span");
     var futureSelction = [
         ".future-temp",
         ".future-weather",
         ".future-week",
         ".future-date"
     ].map(function (val) {
-       return getAllTextSelection(val);
+       return getAllElement(val);
     });
     var updateWithSelector = function (selector, date) {
         for (var i = 0; i < selector.length; i++) {
-            getTextSelection(selector[i]).textContent = date[i];
+            getElement(selector[i]).textContent = date[i];
         }
     };
     var updateWithSelection = function (selection ,date)  {
@@ -62,6 +68,7 @@ function filterWeatherJson(response) {
     var response = JSON.parse(JSON.stringify(response));
     var result = response.result;
     var resultFuture = result.future;
+    var weather = [];
     var now = [
         result.sk.time,//time
         result.sk.temp//currentTemp
@@ -99,6 +106,7 @@ function filterWeatherJson(response) {
         return arr;
     }
     var future = {};
+    var weatherId = [result.today.weather_id];
     for (var key in resultFuture) {
         future[key] = {};
         //注意下面的取得对象值的写法，
@@ -110,10 +118,17 @@ function filterWeatherJson(response) {
             future[key][index] = resultFuture[key][index];
             if (index === "date") future[key][index] = resultFuture[key][index].replace((new Date()).getFullYear().toString(), "");
             }
+            if(index === "weather_id") {
+                weatherId.push(resultFuture[key][index]);
+            }
         }
     }
     var future = outputNewOrder(future);
-    updateWeather([now, today, todayIndex, future]);
+    weather = [now, today, todayIndex, future, weatherId];
+    updateWeather(weather);
+    changeWeatherPhoto(".future-someday img", weather[4]);
+    changeSingleWeatherPhoto("#today-pannel img", weather[4][0]);
+
 }
 //使用jsonp向服务器请求原始json数据
 function getWeatherDate(option_) {
@@ -151,7 +166,7 @@ function getIp(response) {
     });
     //注意，jsonp是异步加载，不支持同步调用，所以下一次jsonp必须在回调里面指定。
 }
-// addJSONP("http://freegeoip.net/json/?callback=getIp");
+addJSONP("http://freegeoip.net/json/?callback=getIp");
 // filterWeatherJson({
 //     "resultcode": "200",
 //     "reason": "successed!",
@@ -271,13 +286,64 @@ function hideAndShow(hideSelector, eventSelector, event) {
     eventEle.addEventListener(event, function(e) {
         if(isHidden) {
             // hideEle.style.visibility = "visible";
-            hideEle.style.opacity = 1;
+            // hideEle.style.opacity = 1;
+            // hideEle.style.flexBasis = 168 + "px";
+            hideEle.setAttribute("id", "today-weather-index");
             isHidden = false;
         }else{
             // hideEle.style.visibility = "hidden";
-            hideEle.style.opacity = 0;
+            // hideEle.style.opacity = 0;
+            // hideEle.style.flexBasis = 0;
+            hideEle.setAttribute("id", "");
             isHidden = true;
         }
     })
 }
-hideAndShow("#today-weather-index", "#today-index", "click")
+hideAndShow(".today-weather-index", "#today-index", "click")
+//根据天气切换图片
+function changeSingleWeatherPhoto (imageElement, data) {
+    var fa = data["fa"];
+    var wid = {
+        "00": "sunny.png",
+        "01": "cloudy.png",
+        "02": "cloudy.png",
+        "05": "haily.png",
+        "19": "haily.png",
+        "06": "sleety.png",
+        "53": "sleety.png",
+        "07": "lightrain.png",
+        "21": "lightrain.png",
+        "08": "moderaterain.png",
+        "22": "moderaterain.png",
+        "03": "pour.png",
+        "03": "pour.png",
+        "04": "pour.png",
+        "09": "pour.png",
+        "10": "pour.png",
+        "11": "pour.png",
+        "12": "pour.png",
+        "23": "pour.png",
+        "24": "pour.png",
+        "25": "pour.png",
+        "14": "ligthsnow.png",
+        "26": "lightsnow.png",
+        "15": "moderatesnow.png",
+        "27": "moderatesnow.png",
+        "16": "heavysnow.png",
+        "13": "heavysnow.png",
+        "28": "heavysnow.png",
+        "17": "heavy.png",
+        "18": "foggy.png",
+        "20": "sandstormy.png",
+        "29": "sandstormy.png",
+        "30": "sandstormy.png",
+        "31": "sandstormy.png",
+    } 
+    imageElement.src = "./src/" + wid[fa];
+}
+function changeWeatherPhoto(selection, data) {
+    var futureImage = getAllElement(selection);
+    for (var i = 0; i < futureImage.length; i++) {
+        changeSingleWeatherPhoto(futureImage[i], data[i+1]);
+    }
+}

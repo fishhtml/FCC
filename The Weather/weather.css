@@ -31,11 +31,15 @@ h1 {
 h2 {
     font-size: 16px;
 }
-body {
-    width: 1000px;;
-    margin: 0 auto;
+h3 {
+    margin: 0px;
+}
+a {
+    text-decoration: none;
 }
 .pannel-common {
+    width: 1200px;
+    margin: 0 auto;
     overflow: hidden;
     background-color: #ffffff;
     border-radius: 5px;
@@ -50,8 +54,22 @@ body {
 #today-weather-info {
     width: 0.5;
     /*! order: 1; */
-    flex-basis: 390px;
+    flex-basis: 450px;
     flex-shrink: 0;
+}
+#today-weather-info h2 {
+    font-weight: normal;
+    font-size: 10px;
+}
+#today-week {
+    font-weight: bold;
+    display: inline-block;
+    margin-right: 30px;
+    font-size: 18px;
+}
+#now-time {
+    font-weight: normal;
+    margin-right: 4px;
 }
 #today-weather-main img{
     vertical-align: middle;
@@ -78,32 +96,33 @@ body {
     display: inline-block;
     margin-right: 20px;
 }
-#today-weather-index {
+.today-weather-index {
     display: flex;
     flex-direction: column;
     justify-content: center;
     width: 0.5;
     opacity: 0;
 }
-#today-weather-index li:first-of-type {
+.today-weather-index li:first-of-type {
     background: url("./src/clothing.png") left center no-repeat;
 }
-#today-weather-index li:nth-of-type(2) {
+.today-weather-index li:nth-of-type(2) {
     background: url("./src/uv.png") left center no-repeat
 }
-#today-weather-index li:nth-of-type(3) {
+.today-weather-index li:nth-of-type(3) {
     background: url("./src/carwashing.png") left center no-repeat
 }
-#today-weather-index li:nth-of-type(4) {
+.today-weather-index li:nth-of-type(4) {
     background: url("./src/travelling.png") left center no-repeat
 }
-#today-weather-index li:nth-of-type(5) {
+.today-weather-index li:nth-of-type(5) {
     background: url("./src/exercise.png") left center no-repeat
 }
-#today-weather-index li:nth-of-type(6) {
+.today-weather-index li:nth-of-type(6) {
+    
     background: url("./src/info.png") left center no-repeat
 }
-#today-weather-index li{
+.today-weather-index li{
     height: 28px;
     line-height: 28px;
     background-size: 15px !important;
@@ -111,13 +130,16 @@ body {
     color: #a3a3a3;
     align-items: center;
 }
-#today-weather-index span {
+#today-weather-index {
+    opacity: 1;
+}
+.today-weather-index span {
     color: #a3a3a3;
 }
-#today-weather-index {
-    -webkit-transition: height 0.3s;
-    -moz-transition: heigth 0.3s;
-    transition: opacity 0.3s;
+.today-weather-index {
+    -webkit-transition: height 0.3s, flex-basis 0.3s;
+    -moz-transition: heigth 0.3s, flex-basis 0.3s;
+    transition: opacity 0.3s, flex-basis 0.3s;
     overflow: hidden;
     margin: 0;
     white-space: nowrap;
@@ -136,4 +158,105 @@ body {
 .future-someday {
     text-align: center;
     order: 1;
+    flex-shrink: 1;
+    flex-grow: 1;
+}
+#addition-info {
+    margin-top: 10px;
+}
+#addition-info h1 {
+    font-size: 10px;
+    margin: 0px;
+    font-weight: normal;
+}
+#addition-info p {
+    text-align: center;
+    font-size: 12px;
+    margin: 0;
+}
+@media screen and (max-width: 1200px) {
+    .pannel-common {
+        width: 90%;
+    }
+    #today-weather-info {
+        flex-basis: 270px;
+    }
+}
+@media screen and (max-width: 610px) {
+    #today-pannel {
+        flex-direction: column;
+    }
+        .pannel-common {
+        width: 95%;
+        padding-left: 10%;
+        padding-right: 0%;
+        min-width: 300px;
+    }
+    #today-weather-info {
+        flex-basis: auto;
+    }
+    #today-weather-wind {
+        margin-right: 30% !important;
+        margin: 0 !important;
+    }
+    #today-weather-dry {
+        width: 30% !important;
+        margin: 0 !important;
+        text-align: center;
+    }
+    #today-index {
+        width: 30% !important;
+        margin: 0 !important;
+    }
+    .today-weather-index {
+        flex-basis: 0;
+    }
+    #today-weather-index {
+        opacity: 1;
+        flex-basis: 168px;
+    }
+    /* 未来七天 */
+    #future-pannel {
+        flex-direction: column;
+        align-items: stretch;
+        padding-left: 0px;
+    }
+    .future-someday {
+        flex-basis: 60px;
+        display: flex;
+        flex-direction: row;
+        margin-bottom: 14px;
+        /*! align-items: stretch; */
+    }
+    .future-someday h3 {
+        flex-basis: 60px;
+        /*! margin-right: 0.2; */
+        width: 100px;
+        flex-grow: 1;
+        line-height: 30px;
+    }
+    .future-someday img {
+        flex-basis: 60px;
+        width:100px;
+        flex-grow: 0px;
+    }
+    .future-someday ul {
+        flex-basis: 60px;
+        width: 100px;
+        flex-grow: 1.2;
+    }
+    .future-someday ul {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+    }
+    .future-someday ul * {
+        flex-basis: 15px;
+    }
+    .future-date {
+        font-size: 14px;
+    }
+    .future-week {
+        font-size: 20px;
+    }
 }
