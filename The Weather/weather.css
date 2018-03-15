@@ -180,6 +180,10 @@ a {
     }
     #today-weather-info {
         flex-basis: 270px;
+        flex-grow: 1;
+    }
+    #today-weather-index {
+        flex-grow: 1;
     }
 }
 @media screen and (max-width: 610px) {
@@ -222,7 +226,7 @@ a {
         padding-left: 0px;
     }
     .future-someday {
-        flex-basis: 60px;
+        flex-basis: 80px;
         display: flex;
         flex-direction: row;
         margin-bottom: 14px;
@@ -236,7 +240,7 @@ a {
         line-height: 30px;
     }
     .future-someday img {
-        flex-basis: 60px;
+        flex-basis: 80px;
         width:100px;
         flex-grow: 0px;
     }
