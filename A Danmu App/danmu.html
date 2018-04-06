@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>HELLO WORLD</title>
+    <link rel="stylesheet" href="./src/danmu.css">
+
+    <!-- HTML5 shim 和 Respond.js 是为了让 IE8 支持 HTML5 元素和媒体查询（media queries）功能 -->
+    <!-- 警告：通过 file:// 协议（就是直接将 html 页面拖拽到浏览器中）访问页面时 Respond.js 不起作用 -->
+    <!--[if lt IE 9]>
+      <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+    <div class="container">
+        <div id="danmu-show">
+            <div id="danmu-screen"></div>
+            <label id="danmu-input" for="danmu-content">
+                输入需要发送的内容：
+                <input type="text" id="danmu-content" placeholder="在此输入需要发送得弹幕" value="">
+                <br>
+                字体颜色：
+                <input type="color" name="color" id="danmu-color">
+                <br>
+                字体大小：
+                <input type="number" name="fontSize" id="danmu-fontSize" min="12" max="36" value="12">
+                <br>
+                每秒经过的像素,默认200，最慢100，最快300:
+                <input type="number" name="speed" id="danmu-speed" value="200" min="100" max="300">
+                <br>
+                <input type="submit" value="发送" id="danmu-send">
+            </label>
+        </div>
+        
+    </div>
+    <script src="./src/danmu.js"></script>
+</body>
+
+</html>

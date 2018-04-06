@@ -1,0 +1,29 @@
+html {
+    font-size: 14px;
+}
+.container {
+    width: 80%;
+    margin: 2rem auto;
+}
+#danmu-show {
+    margin: 12px auto;
+    overflow: hidden;
+    width: 80%;
+    #danmu-screen {
+        height: 300px;
+        border: 1px #cccccc solid;
+        position: relative;
+    }
+}
+.danmu-text {
+    position: absolute;
+    transition: left 3s linear;
+}
+@media screen and (max-width: 996px) {
+    .container {
+        width: 90%;
+    }
+    #danmu-show {
+        width: 100%;
+    }
+}
