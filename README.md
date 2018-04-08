@@ -16,3 +16,8 @@
 ## A Danmu App
 
 [点我预览](https://fishhtml.github.io/FCC/A%20Danmu%20App/danmu.html)
+
+## A Wiki Viewer
+
+**使用react构建**
+[点我预览](https://fishhtml.github.io/FCC/A%20Wiki%20Viewer/a-wikipedia-viewer/build/index.html)

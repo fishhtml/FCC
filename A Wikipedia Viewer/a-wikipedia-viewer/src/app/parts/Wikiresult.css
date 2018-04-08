@@ -1,0 +1,25 @@
+li {
+    list-style: none;
+}
+ul {
+    padding-left: 0
+}
+a {
+    text-decoration: none;
+    color: #000;
+}
+a:hover {
+    text-decoration: underline;
+}
+#wiki-output {
+    width: 80%;
+    margin: auto auto;
+}
+@media screen and (max-width:738px) {
+    #wiki-output {
+        width: 100%;
+    }
+    h1 {
+        font-size: 20px;
+    }
+}
